@@ -6,6 +6,12 @@
     font-family: 'rubik', sans-serif;
 }
 
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
 .logo-marca{
     height: 5.5rem;
 }
