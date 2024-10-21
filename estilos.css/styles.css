@@ -20,11 +20,67 @@ ul{
     height: 9rem;
 }
 
+.boton-carrito{
+    margin-top: 2rem;
+}
+
+.numero{
+    background-color: rgb(231, 182, 182);
+    color: black;
+    padding: .15rem .25rem;
+    border-radius: .25rem;
+}
+main{
+    background-color: black;
+}
 .marcas{
     background-color: rgb(238, 225, 225);
     display: flex;
     justify-content: space-between;
 }
+
+.contenedor-productos{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+
+.producto-imagen {
+    max-width: 100%;
+    border-radius: 1rem;
+}
+
+.producto-detalles{
+    background-color: rgb(235, 201, 201);
+    color: black;
+    padding: .5rem;
+    border-radius: 1rem;
+    margin-top: -2rem;
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+
+.producto-titulo{
+    font-size: 1.5rem;
+}
+
+.producto-agregar{
+    border: 0;
+    background-color: black;
+    color: white;
+    padding: .4rem;
+    text-transform: uppercase;
+    border-radius: 2rem;
+    border: 2px solid white;
+}
+
+.producto-agregar:hover {
+    background-color: rgb(235, 201, 201);;
+    color: rgb(41, 28, 28);
+}
+
 
 /* carrito*/
 
@@ -105,4 +161,8 @@ gap: 1rem;
     cursor: pointer;
     border-top-right-radius: 1rem;
     border-bottom-right-radius: 1rem;
+}
+
+.disabled{
+    display: none;
 }

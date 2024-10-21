@@ -70,3 +70,50 @@
 
 // const total = carrito.reduce( (acc,el) => acc + el.precio * el.unidades, 0)
 // console.log (`el total a pagar es: ${total}`)
+
+const productos = [
+{
+    id: "gorra 01",
+    titulo: "gorra new era",
+    Imagen: "./carpeta-img/gorra-ne.webp",
+    categoria:{
+        nombre:"gorras",
+        id:"gorras"
+    },
+    precio:1000
+},
+{
+    id:"gorra 02",
+    titulo: "gorra nike",
+    imagen:"./carpeta-img/gorra-nike-1.png",
+    categoria:{
+        nombre:"gorras",
+        id:"gorras"
+    },
+    precio: 1000
+},
+{
+    id:"gorra 03",
+    titulo: "gorra goorin",
+    imagen:"./carpeta-img/gorra-gb-1.webp",
+    categoria:{
+        nombre:"gorras",
+        id:"gorras"
+    },
+    precio: 1000
+},
+{
+    id:"gorra 04",
+    titulo: "gorra tnf",
+    imagen:"./carpeta-img/gorra-tnf-1.png",
+    categoria:{
+        nombre:"gorras",
+        id:"gorras"
+    },
+    precio: 1000
+},
+];
+
+const contenedorProductos = document.queysSelectir("#contenedor-productos");
+
+
