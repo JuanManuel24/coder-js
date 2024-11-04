@@ -32,8 +32,8 @@
       <main>
         <h2 class="titulo-principal">Carrito</h2>
         <div class="contenedor-carrito">
-          <p class="carrito-vacio">Tu carrito esta vacio <i class="bi bi-emoji-frown"></i></p>
-          <div class="carrito-productos disabled">
+          <p id="carrito-vacio" class="carrito-vacio">Tu carrito esta vacio <i class="bi bi-emoji-frown"></i></p>
+          <div id="carrito-productos" class="carrito-productos disabled">
 
             <div class="carrito-producto">
               <img class="carrito-producto-imagen" src="./carpeta-img/gorra-ne.webp" alt="">
@@ -55,30 +55,13 @@
                   </div>
                   <button class="carrito-producto-eliminar"><i class="bi bi-trash"></i></button>
              </div>
-             <div class="carrito-producto">
-              <img class="carrito-producto-imagen" src="./carpeta-img/gorra-nike-1.png" alt="">
-              <div class="carrito-producto-titulo">
-                <small>Titulo</small>
-                <h3>Gorra Nike</h3>
-              </div>
-                <div class="carrito-producto-cantidad">
-                  <small>Cantidad</small>
-                  <p>2</p>
-                </div>
-                  <div class="carrito-producto-precio">
-                    <small>precio</small>
-                    <p>$ 1000</p>
-                  </div>
-                  <div class="carrito-producto-subtotal">
-                    <small>Subtotal</small>
-                    <p>$ 2000</p>
-                  </div>
-                  <button class="carrito-producto-eliminar"><i class="bi bi-trash"></i></button>
+             <div id="carrito-productos" class="carrito-producto disabled">
+              <!-- completado con js-->             
               </div>
 
           </div>
         
-        <div class="carrito-acciones disabled">
+        <div id="carrito-acciones" class="carrito-acciones disabled">
           <div class="carrito-acciones-izquierda">
             <button class="carrito-acciones-vaciar">Vaciar carrito</button>
           </div>
@@ -91,9 +74,9 @@
           </div>
         </div>
 
-        <p class="carrito-comprado disabled">Muchas gracias por su compra. <i class="bi bi-emoji-laughing"></i> </p>
+        <p id="carrito-comprado" class="carrito-comprado disabled">Muchas gracias por su compra. <i class="bi bi-emoji-laughing"></i> </p>
       </div>
       </main>
-      
+      <script src="./js/carrito.js"></script>
 </body>
 </html>
