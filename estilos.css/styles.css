@@ -10,6 +10,13 @@
     height: 6rem;
 }
 
+.numero {
+    background-color: black;
+    color: white;
+    padding: .15rem .25rem;
+    border-radius: .25rem;
+}
+
 .contenedor-productos {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -128,4 +135,8 @@ border-radius: 1rem;
     border-radius: 1rem;
     text-transform: uppercase;
     cursor: pointer;
+}
+
+.disabled {
+    display: none;
 }

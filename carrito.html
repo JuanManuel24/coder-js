@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,10 +20,10 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class=" boton-menu nav-link boton-volver" aria-current="page" href="./index.html"><i class="bi bi-arrow-return-left"></i>Seguir Comprando</a>
+                <a class="nav-link boton-volver" aria-current="page" href="./index.html"><i class="bi bi-arrow-return-left"></i>Seguir Comprando</a>
               </li>
               <li class="nav-item">
-                <a class="boton-menu nav-link boton-carrito" href="#"><i class="bi bi-cart"></i> Carrito</a>
+                <a class="nav-link boton-carrito" href="#"><i class="bi bi-cart"></i> Carrito</a>
               </li>
             </ul>
           </div>
@@ -32,12 +32,12 @@
       <main>
         <h2 class="titulo-principal">Carrito</h2>
         <div class="contenedor-carrito">
-          <p class="carrito-vacio">Tu carrito esta vacio. <i class="bi bi-emoji-frown"></i></p>
+          <p class="carrito-vacio">Tu carrito está vacío. <i class="bi bi-emoji-frown"></i></p>
 
-          <div class="carrito-productos">
+          <div class="carrito-productos disabled">
             
             <div class="carrito-producto">
-              <img class="carrito-producto-imagen" src="./carpeta-img/gorra01.webp" alt="">
+              <img class="carrito-producto-imagen" src="./carpeta-img/gorra01.webp" alt="Gorra">
               <div class="carrito-producto-titulo">
                 <small>Titulo</small>
                 <h3>Gorra 01</h3>
@@ -58,7 +58,7 @@
             </div>
 
             <div class="carrito-producto">
-              <img class="carrito-producto-imagen" src="./carpeta-img/gorra02.webp" alt="">
+              <img class="carrito-producto-imagen" src="./carpeta-img/gorra02.webp" alt="Gorra">
               <div class="carrito-producto-titulo">
                 <small>Titulo</small>
                 <h3>Gorra 02</h3>
@@ -79,7 +79,7 @@
             </div>
          
           </div>
-          <div class="carrito-acciones">
+          <div class="carrito-acciones disabled">
             <div class="carrito-acciones-izquierda">
               <button class="carrito-acciones-vaciar">Vaciar carrito</button>
             </div>
@@ -92,12 +92,14 @@
             </div>
           </div>
 
-          <p class="carrito-comprado">¡Muchas gracias por tu compra! <i class="bi bi-emoji-sunglasses"></i></p>
+          <p class="carrito-comprado disabled">¡Muchas gracias por tu compra! <i class="bi bi-emoji-sunglasses"></i></p>
 
         </div>
       </main>
-      <footer class="bg-light">
-        <p class="texto-footer text-center">CODERHOUSE | TODOS LOS DERECHOS RESERVADOS © 2024.</p>
+      <footer class="bg-light d-flex justify-content-between">
+        <p><strong>FOXCAP</strong> <i class="bi bi-instagram"></i></p>
+        <p>CODERHOUSE | TODOS LOS DERECHOS RESERVADOS © 2024.</p>
+        <P><i class="bi bi-geo-alt-fill"></i> Mercedes, Buenos Aires</P>
       </footer>
       <script src="./js/carrito.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
