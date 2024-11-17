@@ -94,6 +94,7 @@ const productos = [
 
 const contenedorProductos = document.querySelector("#contenedor-productos");
 let botonesAgregar = document.querySelectorAll(".producto-agregar");
+const numero = document.querySelector("#numero");
 
 function cargarProductos() {
     productos.forEach(producto => {
@@ -127,9 +128,24 @@ function actualizarBotonesAgregar() {
 const productosEnCarrito = [];
 
 function agregarAlCarrito(e) {
-
     const idBoton = e.currentTarget.id;
     const productoAgregado = productos.find(producto => producto.id === idBoton);
-    console.log(productoAgregado);
+
+    if(productosEnCarrito.some(producto => producto.id === idBoton)) {
+       const index = productosEnCarrito.findIndex(producto => producto.id === idBoton);
+       productosEnCarrito[index].cantidad++; 
+    } else {
+        productoAgregado.cantidad = 1;
+        productosEnCarrito.push(productoAgregado);
+    }
+
+    actualizarNumero();
+    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+    
+}
+
+function actualizarNumero() {
+    let nuevoNumero = productosEnCarrito.reduce ((acc, producto) => acc + producto.cantidad, 0);
+    numero.innerText = nuevoNumero;
 }
 
