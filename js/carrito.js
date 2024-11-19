@@ -76,6 +76,23 @@ function cargarProductosCarrito() {
     }
     
     function eliminarDelCarrito (e) {
+
+        Toastify({
+            text: "producto eliminado",
+            duration: 3000,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "linear-gradient(to right, #868f96, #596164)",
+              borderRadius: "2rem",
+              textTransform: "uppercase",
+              fontSize: ".80rem"
+            },
+            onClick: function(){} // Callback after click
+          }).showToast();
+
         const idBoton = e.currentTarget.id;
         const index = productosEnCarrito.findIndex(producto => producto.id === idBoton);
        
@@ -89,9 +106,42 @@ function cargarProductosCarrito() {
     
     botonVaciar.addEventListener("click", vaciarCarrito);
     function vaciarCarrito() {
-        productosEnCarrito.length = 0;
-        localStorage.setItem("productos-en-carrito",JSON.stringify(productosEnCarrito));
-        cargarProductosCarrito();
+
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+              confirmButton: "btn btn-success",
+              cancelButton: "btn btn-danger"
+            },
+            buttonsStyling: false
+          });
+          swalWithBootstrapButtons.fire({
+            title: "¿Estas seguro?",
+            text: "¡Se van a borrar todos tus productos!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: "¡Sí, bórralo!",
+            cancelButtonText: "¡No, cancela!",
+            reverseButtons: true
+          }).then((result) => {
+            if (result.isConfirmed) {
+              swalWithBootstrapButtons.fire({
+                title: "¡Eliminado!",
+                text: "Su archivo ha sido eliminado.",
+                icon: "success"
+              });
+              productosEnCarrito.length = 0;
+              localStorage.setItem("productos-en-carrito",JSON.stringify(productosEnCarrito));
+              cargarProductosCarrito();
+            } else if (
+              result.dismiss === Swal.DismissReason.cancel
+            ) {
+              swalWithBootstrapButtons.fire({
+                title: "Cancelado",
+                text: "Tus productos estan a salvo ;)",
+                icon: "error"
+              });
+            }
+          });
     }
     
     function actualizarTotal() {

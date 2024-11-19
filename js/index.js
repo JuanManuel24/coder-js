@@ -1,96 +1,11 @@
-// PRODUCTOS
-const productos = [
-    {
-        id: "gorra-01",
-        titulo: "gorra 01",
-        imagen: "./carpeta-img/gorra01.webp",
-        categoria: {
-            nombre: "gorras",
-            id: "gorras"
-        },
-        precio: 1000
-    },
-    {
-        id: "gorra-02",
-        titulo: "gorra 02",
-        imagen: "./carpeta-img/gorra02.webp",
-        categoria: {
-            nombre: "gorras",
-            id: "gorras"
-        },
-        precio: 1000
-    },
-    {
-        id: "gorra-03",
-        titulo: "gorra 03",
-        imagen: "./carpeta-img/gorra03.webp",
-        categoria: {
-            nombre: "gorras",
-            id: "gorras"
-        },
-        precio: 1000
-    },
-    {
-        id: "gorra-04",
-        titulo: "gorra 04",
-        imagen: "./carpeta-img/gorra04.webp",
-        categoria: {
-            nombre: "gorras",
-            id: "gorras"
-        },
-        precio: 1000
-    },
-    {
-        id: "gorra-05",
-        titulo: "gorra 05",
-        imagen: "./carpeta-img/gorra05.png",
-        categoria: {
-            nombre: "gorras",
-            id: "gorras"
-        },
-        precio: 1000
-    },
-    {
-        id: "gorra-06",
-        titulo: "gorra 06",
-        imagen: "./carpeta-img/gorra06.png",
-        categoria: {
-            nombre: "gorras",
-            id: "gorras"
-        },
-        precio: 1000
-    },
-    {
-        id: "gorra-07",
-        titulo: "gorra 07",
-        imagen: "./carpeta-img/gorra07.png",
-        categoria: {
-            nombre: "gorras",
-            id: "gorras"
-        },
-        precio: 1000
-    },
-    {
-        id: "gorra-08",
-        titulo: "gorra 08",
-        imagen: "./carpeta-img/gorra08.webp",
-        categoria: {
-            nombre: "gorras",
-            id: "gorras"
-        },
-        precio: 1000
-    },
-    {
-        id: "gorra-09",
-        titulo: "gorra 09",
-        imagen: "./carpeta-img/gorra09.webp",
-        categoria: {
-            nombre: "gorras",
-            id: "gorras"
-        },
-        precio: 1000
-    },
-];
+let productos = [];
+
+fetch("./js/productos.json")
+.then(response => response.json())
+.then(data => {
+    productos = data;
+    cargarProductos(productos);
+})
 
 const contenedorProductos = document.querySelector("#contenedor-productos");
 let botonesAgregar = document.querySelectorAll(".producto-agregar");
@@ -114,12 +29,9 @@ function cargarProductos() {
     })
 
     actualizarBotonesAgregar();
-    console.log(botonesAgregar);
 
 }
 
-cargarProductos();
- 
 function actualizarBotonesAgregar() {
      botonesAgregar = document.querySelectorAll(".producto-agregar");
 
@@ -141,6 +53,22 @@ if (productosEnCarritoLS) {
 
 
 function agregarAlCarrito(e) {
+
+    Toastify({
+        text: "Agregaste este producto al carrito",
+        duration: 3000,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #868f96, #596164)",
+          borderRadius: "2rem",
+          textTransform: "uppercase",
+          fontSize: ".80rem"
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
 
     const idBoton = e.currentTarget.id;
     const productoAgregado = productos.find(producto => producto.id === idBoton)
